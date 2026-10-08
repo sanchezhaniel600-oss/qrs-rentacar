@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Encuentra los perfiles oficiales de AA Rent a Car en Instagram, TikTok y Facebook. Escanea cada código QR o abre la red social directamente.">
+    <meta name="description" content="Encuentra los perfiles oficiales de AA Rent a Car en Instagram, TikTok y Facebook. Escanea cada código QR o abre la red social directamente." data-i18n-content="metaDescription">
     <meta name="theme-color" content="#10294b">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="AA Rent a Car | Encuéntranos en nuestras redes">
-    <meta property="og:description" content="Tu camino, tu libertad. Encuentra los perfiles oficiales de AA Rent a Car.">
+    <meta property="og:title" content="AA Rent a Car | Encuéntranos en nuestras redes" data-i18n-content="pageTitle">
+    <meta property="og:description" content="Tu camino, tu libertad. Encuentra los perfiles oficiales de AA Rent a Car." data-i18n-content="socialDescription">
     <meta property="og:image" content="assets/aa-rent-a-car-logo.png">
-    <title>AA Rent a Car | Encuéntranos en nuestras redes</title>
+    <title data-i18n="pageTitle">AA Rent a Car | Encuéntranos en nuestras redes</title>
     <link rel="icon" type="image/png" href="assets/aa-rent-a-car-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,16 +20,22 @@
 </head>
 <body>
     <header class="site-header">
-        <a class="brand" href="#inicio" aria-label="AA Rent a Car, inicio">
+        <a class="brand" href="#inicio" aria-label="AA Rent a Car, inicio" data-i18n-aria="homeLabel">
             <span class="brand__logo-wrap">
-                <img src="assets/aa-rent-a-car-logo.png" alt="Logo oficial de AA Rent a Car">
+                <img src="assets/aa-rent-a-car-logo.png" alt="Logo oficial de AA Rent a Car" data-i18n-alt="logoAlt">
             </span>
             <span class="brand__copy">
                 <strong>AA Rent a Car</strong>
-                <span>Tu camino, tu libertad.</span>
+                <span data-i18n="tagline">Tu camino, tu libertad.</span>
             </span>
         </a>
-        <a class="header-link" href="#redes">Redes oficiales <span aria-hidden="true">↘</span></a>
+        <div class="header-actions">
+            <a class="header-link" href="#redes"><span data-i18n="officialProfiles">Redes oficiales</span> <span aria-hidden="true">↘</span></a>
+            <div class="language-toggle" id="language-toggle" role="group" aria-label="Seleccionar idioma" data-i18n-aria="languageSelector">
+                <button type="button" data-language="es" aria-pressed="true">ES</button>
+                <button type="button" data-language="en" aria-pressed="false">EN</button>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -38,16 +44,23 @@
                 <span class="brand__logo-wrap brand__logo-wrap--hero" aria-hidden="true">
                     <img src="assets/aa-rent-a-car-logo.png" alt="">
                 </span>
-                <span class="eyebrow"><span class="eyebrow__dot"></span> AA RENT A CAR · PERFILES OFICIALES</span>
-                <h1 id="hero-title">Tu camino,<br><span>tu libertad.</span></h1>
-                <p>Encuéntranos en nuestras plataformas.</p>
-                <a class="button button--lime" href="#redes">Explorar redes <span aria-hidden="true">↓</span></a>
+                <span class="eyebrow"><span class="eyebrow__dot"></span><span data-i18n="heroEyebrow">AA RENT A CAR · PERFILES OFICIALES</span></span>
+                <h1 id="hero-title"><span class="hero__title-leading" data-i18n="heroTitleFirst">Tu camino,</span><br><span class="hero__title-highlight" data-i18n="heroTitleSecond">tu libertad.</span></h1>
+                <p data-i18n="heroDescription">Encuéntranos en nuestras plataformas.</p>
+                <a class="button button--lime" href="#redes"><span data-i18n="exploreSocials">Explorar redes</span> <span aria-hidden="true">↓</span></a>
                 <span class="hero__note">Instagram · TikTok · Facebook</span>
             </div>
-            <div class="hero__visual" aria-hidden="true">
-                <div class="hero__orbit hero__orbit--one"></div>
-                <div class="hero__orbit hero__orbit--two"></div>
-                <img src="assets/WhatsApp%20Image%202026-10-07%20at%202.35.33%20PM.jpeg" alt="">
+            <div class="hero__visual" role="region" aria-roledescription="carrusel" aria-label="Fotografías de vehículos" data-i18n-aria="carouselLabel" data-i18n-roledescription="carouselRole">
+                <div class="hero__slides" id="vehicle-slides"></div>
+                <div class="hero__orbit hero__orbit--one" aria-hidden="true"></div>
+                <div class="hero__orbit hero__orbit--two" aria-hidden="true"></div>
+                <span class="hero__carousel-count" id="vehicle-count" aria-live="off"></span>
+                <div class="hero__carousel-controls">
+                    <button class="hero__carousel-button" type="button" data-carousel-previous aria-label="Fotografía anterior" data-i18n-aria="previousPhoto"><span aria-hidden="true">‹</span></button>
+                    <div class="hero__carousel-dots" id="vehicle-dots" role="group" aria-label="Seleccionar fotografía" data-i18n-aria="selectPhoto"></div>
+                    <button class="hero__carousel-button" type="button" data-carousel-next aria-label="Fotografía siguiente" data-i18n-aria="nextPhoto"><span aria-hidden="true">›</span></button>
+                    <button class="hero__carousel-button hero__carousel-toggle" type="button" data-carousel-toggle aria-label="Pausar carrusel" data-i18n-aria="pauseCarousel" aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button>
+                </div>
             </div>
             <span class="hero__road" aria-hidden="true"></span>
         </section>
@@ -55,8 +68,8 @@
         <section class="social-section" id="redes" aria-labelledby="social-title">
             <div class="section-heading">
                 <div>
-                    <span class="eyebrow eyebrow--light">CONECTA CON AA</span>
-                    <h2 id="social-title">Escanea y <span>síguenos</span></h2>
+                    <span class="eyebrow eyebrow--light" data-i18n="socialEyebrow">CONECTA CON AA</span>
+                    <h2 id="social-title"><span data-i18n="socialTitleFirst">Escanea y</span> <span class="heading-highlight" data-i18n="socialTitleSecond">síguenos</span></h2>
                 </div>
                 <span class="section-heading__index" aria-hidden="true">01 / 03</span>
             </div>
@@ -67,38 +80,38 @@
         <section class="contact-section" id="contacto" aria-labelledby="contact-title">
             <div class="section-heading">
                 <div>
-                    <span class="eyebrow eyebrow--light">CONTACTO</span>
-                    <h2 id="contact-title">Estamos en <span>León</span></h2>
+                    <span class="eyebrow eyebrow--light" data-i18n="contactEyebrow">CONTACTO</span>
+                    <h2 id="contact-title"><span data-i18n="contactTitleFirst">Estamos en</span> <span class="heading-highlight" data-i18n="city">León</span></h2>
                 </div>
-                <span class="section-heading__index">NICARAGUA</span>
+                <span class="section-heading__index" data-i18n="country">NICARAGUA</span>
             </div>
             <div class="contact-grid">
                 <a class="contact-card contact-card--phone" href="tel:+50585338738">
-                    <span class="contact-card__label">Teléfono</span>
+                    <span class="contact-card__label" data-i18n="phone">Teléfono</span>
                     <strong>+505 8533 8738</strong>
-                    <span class="contact-card__action">Llamar <span aria-hidden="true">↗</span></span>
+                    <span class="contact-card__action"><span data-i18n="call">Llamar</span> <span aria-hidden="true">↗</span></span>
                 </a>
                 <div class="contact-card">
-                    <span class="contact-card__label">Dirección</span>
-                    <p>21000 Pali Guadalupe, 1 cuadra al norte,<br>2.5 cuadras al este, León 21000, Nicaragua.</p>
+                    <span class="contact-card__label" data-i18n="address">Dirección</span>
+                    <p data-i18n="addressDetails">21000 Pali Guadalupe, 1 cuadra al norte, 2.5 cuadras al este, León 21000, Nicaragua.</p>
                 </div>
                 <div class="contact-card">
-                    <span class="contact-card__label">Horario de atención</span>
-                    <strong>24 horas</strong>
-                    <p>Todos los días</p>
+                    <span class="contact-card__label" data-i18n="businessHours">Horario de atención</span>
+                    <strong data-i18n="hours">24 horas</strong>
+                    <p data-i18n="everyDay">Todos los días</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <a class="footer-brand" href="#inicio" aria-label="Volver al inicio">
+        <a class="footer-brand" href="#inicio" aria-label="Volver al inicio" data-i18n-aria="homeLabel">
             <span class="brand__logo-wrap brand__logo-wrap--footer">
                 <img src="assets/aa-rent-a-car-logo.png" alt="">
             </span>
-            <span><strong>AA Rent a Car</strong><small>Tu camino, tu libertad.</small></span>
+            <span><strong>AA Rent a Car</strong><small data-i18n="tagline">Tu camino, tu libertad.</small></span>
         </a>
-        <div class="footer-socials" id="footer-socials" aria-label="Redes sociales oficiales"></div>
+        <div class="footer-socials" id="footer-socials" aria-label="Redes sociales oficiales" data-i18n-aria="socialNetworks"></div>
         <span class="footer-copyright">© <span id="year"></span> AA Rent a Car</span>
     </footer>
 </body>

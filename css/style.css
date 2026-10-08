@@ -46,6 +46,44 @@ a {
     margin: 0 auto;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.language-toggle {
+    display: inline-flex;
+    padding: 3px;
+    border: 1px solid #dfe4dc;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.language-toggle button {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0 8px;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.language-toggle button[aria-pressed="true"] {
+    background: var(--navy);
+    color: #fff;
+}
+
+.language-toggle button:hover:not([aria-pressed="true"]) {
+    background: #eff5e6;
+    color: var(--navy);
+}
+
 .brand,
 .footer-brand {
     display: inline-flex;
@@ -175,7 +213,7 @@ a {
     line-height: 0.98;
 }
 
-.hero h1 span {
+.hero h1 .hero__title-highlight {
     color: var(--lime);
 }
 
@@ -229,16 +267,126 @@ a {
 
 .hero__visual::after {
     position: absolute;
-    inset: 45% 0 0;
-    background: linear-gradient(0deg, rgb(9 29 53 / 48%), transparent);
+    z-index: 1;
+    inset: 58% 0 0;
+    background: linear-gradient(0deg, rgb(9 29 53 / 76%), transparent);
     content: '';
+    pointer-events: none;
 }
 
-.hero__visual > img {
+.hero__slides,
+.hero__slide,
+.hero__slide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__slides {
+    z-index: 0;
+}
+
+.hero__slide {
+    opacity: 0;
+    transition: opacity 700ms ease;
+}
+
+.hero__slide.is-active {
+    opacity: 1;
+}
+
+.hero__slide img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: 53% 57%;
+}
+
+.hero__carousel-count {
+    position: absolute;
+    z-index: 3;
+    top: 16px;
+    left: 16px;
+    padding: 7px 10px;
+    border: 1px solid rgb(255 255 255 / 34%);
+    border-radius: 3px;
+    background: rgb(16 41 75 / 78%);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.hero__carousel-controls {
+    position: absolute;
+    z-index: 4;
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero__carousel-button {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 65%);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--navy);
+    cursor: pointer;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.hero__carousel-button:hover {
+    transform: scale(1.06);
+    background: var(--lime);
+}
+
+.hero__carousel-button > span {
+    font-size: 25px;
+    line-height: 1;
+}
+
+.hero__carousel-dots {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hero__carousel-dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 auto;
+    padding: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: width 180ms ease, border-radius 180ms ease, background-color 180ms ease;
+}
+
+.hero__carousel-dot[aria-current="true"] {
+    width: 23px;
+    border-radius: 6px;
+    background: var(--lime);
+}
+
+.hero__carousel-toggle > span {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.hero__visual .hero__orbit {
+    z-index: 2;
 }
 
 .hero__orbit {
@@ -299,7 +447,7 @@ a {
     line-height: 1.08;
 }
 
-.section-heading h2 span {
+.section-heading h2 .heading-highlight {
     color: var(--green);
 }
 
@@ -614,6 +762,10 @@ a {
         gap: 8px;
     }
 
+    .header-actions {
+        gap: 6px;
+    }
+
     .brand__logo-wrap {
         width: 70px;
         height: 70px;
@@ -632,6 +784,12 @@ a {
         gap: 6px;
         padding: 0 10px;
         font-size: 11px;
+    }
+
+    .language-toggle button {
+        min-width: 30px;
+        min-height: 32px;
+        padding: 0 5px;
     }
 
     .hero {
@@ -739,22 +897,41 @@ a {
         width: calc(100% - 24px);
     }
 
+    .brand {
+        gap: 5px;
+    }
+
     .brand__logo-wrap {
-        width: 60px;
-        height: 60px;
+        width: 48px;
+        height: 48px;
     }
 
     .brand__copy strong {
-        font-size: 12px;
+        font-size: 10px;
+        white-space: nowrap;
     }
 
     .brand__copy > span {
-        font-size: 9px;
+        display: none;
     }
 
     .header-link {
-        padding: 0 8px;
+        padding: 0 6px;
         font-size: 10px;
+    }
+
+    .header-actions {
+        gap: 3px;
+    }
+
+    .language-toggle {
+        padding: 2px;
+    }
+
+    .language-toggle button {
+        min-width: 25px;
+        min-height: 30px;
+        padding: 0 4px;
     }
 
     .social-card {

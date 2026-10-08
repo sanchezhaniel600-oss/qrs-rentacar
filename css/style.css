@@ -453,6 +453,87 @@ a {
     --social-tint: #eaf2fb;
 }
 
+.contact-section {
+    width: min(100% - 48px, 1120px);
+    margin: 0 auto;
+    padding: 0 0 78px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.contact-card {
+    display: flex;
+    min-width: 0;
+    min-height: 148px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 9px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.contact-card__label {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.contact-card strong {
+    font-family: var(--font-display);
+    font-size: 18px;
+}
+
+.contact-card p {
+    margin: 0;
+    color: var(--ink);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.contact-card--phone {
+    border-color: var(--navy);
+    background: var(--navy);
+    color: #fff;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.contact-card--phone:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgb(16 41 75 / 18%);
+}
+
+.contact-card--phone .contact-card__label {
+    color: #c8d6e4;
+}
+
+.contact-card__action {
+    display: inline-flex;
+    min-height: 34px;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2px;
+    padding: 0 12px;
+    border-radius: 3px;
+    background: var(--lime);
+    color: var(--navy-deep);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.contact-card__action span {
+    font-size: 14px;
+}
+
 .site-footer {
     display: flex;
     min-height: 112px;
@@ -594,6 +675,11 @@ a {
         padding: 53px 0 59px;
     }
 
+    .contact-section {
+        width: min(100% - 36px, 560px);
+        padding-bottom: 54px;
+    }
+
     .section-heading {
         margin-bottom: 22px;
     }
@@ -620,6 +706,16 @@ a {
         min-height: 44px;
         margin-top: 0;
         font-size: 11px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .contact-card {
+        min-height: 126px;
+        padding: 17px;
     }
 
     .site-footer {
